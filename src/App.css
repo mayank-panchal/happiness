@@ -1,38 +1,116 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #555;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
+.nav-link:hover {
+  color: #ff4081;
+}
+
+/* Section Styles */
+section {
+  padding: 100px 20px;
   min-height: 100vh;
+}
+/* Home Section Styling */
+.home-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.home-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.home-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Balloon Animations */
+.balloon-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.balloon {
+  width: 60px;
+  height: 80px;
+  background-color: #ff4081;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  animation: float 5s ease-in-out infinite;
+}
+
+.balloon1 {
+  background-color: #ff4081;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.balloon2 {
+  background-color: #ffd700;
+  left: 50%;
+  animation-delay: 2s;
+}
+
+.balloon3 {
+  background-color: #00bcd4;
+  left: 80%;
+  animation-delay: 4s;
+}
+
+/* Balloon Float Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
